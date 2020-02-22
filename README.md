@@ -1,4 +1,7 @@
-1. Create a NodeJS Server that has 2 endpoints. GetMany should return the entire list of fake products. GetSingle should accept an ID, and return just that 1 product. 
+1. Create a NodeJS Server that has 2 endpoints. GetMany should return the entire list of fake products. 
+GetSingle should accept an ID, and return just that 1 product. 
+
+// part 1 is done
 // npm start from root to run server, listens on http://localhost:8080/
 // example usage of Getmany - http://localhost:8080/GetMany
 // example usage of GetSingle (pass id, which looks up _id within json) - http://localhost:8080/GetSingle?id=5c58693b2f3b8ac746a18f85
