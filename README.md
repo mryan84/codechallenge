@@ -10,13 +10,17 @@ GetSingle should accept an ID, and return just that 1 product.
 // example usage of GetSingle (pass id, which looks up _id within json) - http://localhost:8080/GetSingle?id=5c58693b2f3b8ac746a18f85
 
 2. Create an SPA which wires up the static HTML given in the repo (You can use (or not) any framework you are comfortable with).
+
 // in progress
 
 3. "Wire up" includes any search, sort, or filters you see on the page.
+
 // in progress
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
+
 // done as 2 pages are provided to edit
 
 5. Delivery should be a separate github repo on your own account. 
+
 // done
