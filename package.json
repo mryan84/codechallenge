@@ -1,0 +1,23 @@
+{
+  "name": "codechallenge",
+  "version": "1.0.0",
+  "description": "### Welcome to the Whitebox Code Challenge!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mryan84/codechallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mryan84/codechallenge/issues"
+  },
+  "homepage": "https://github.com/mryan84/codechallenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}
