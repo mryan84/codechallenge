@@ -13,9 +13,12 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // in progress
 
+
 3. "Wire up" includes any search, sort, or filters you see on the page.
 
 // in progress
+
+// sorting highest to lowest or lowest to highest by price done
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
 
