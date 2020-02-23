@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="product.js"></script>
+
 <head>
 	<title>Product</title>
 	<meta charset="UTF-8">
@@ -506,16 +510,16 @@
 					<div class="flex-sb-m flex-w p-b-35">
 						<div class="flex-w">
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
+								<select id="sortType" class="selection-2" name="sorting">
 									<option>Default Sorting</option>
 									<option>Popularity</option>
-									<option>Price: low to high</option>
-									<option>Price: high to low</option>
+									<option value="asc">Price: low to high</option>
+									<option value="desc">Price: high to low</option>
 								</select>
 							</div>
 
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
+								<select id="sortPriceRange" class="selection-2" name="sorting">
 									<option>Price</option>
 									<option>$0.00 - $50.00</option>
 									<option>$50.00 - $100.00</option>
@@ -533,7 +537,7 @@
 					</div>
 
 					<!-- Product -->
-					<div class="row">
+					<div id ="sortRow" class="row">
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
@@ -1132,4 +1136,11 @@
 	<div id="dropDownSelect2"></div>
 
 </body>
+
+<script>
+$('#sortType').on('change', function() {
+  sortBySelectedType(this.value);
+});
+</script>
+
 </html>
