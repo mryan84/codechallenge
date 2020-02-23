@@ -532,6 +532,7 @@
 						</div>
 
 						<span class="s-text8 p-t-5 p-b-5">
+							<!-- I could wire this up to change too -->
 							Showing 1–12 of 16 results
 						</span>
 					</div>
@@ -1139,9 +1140,16 @@
 
 <script>
 var defaultList = $(".col-sm-12.col-md-6.col-lg-4.p-b-50"); // store default order on load
+
 $('#sortType').on('change', function() {
   sortBySelectedType(this.value);
 });
+
+$('#sortPriceRange').on('change', function() {
+  filterByPriceRangeOption($(this).children("option:selected").text());
+});
+
+
 </script>
 
 </html>
