@@ -11,12 +11,12 @@ GetSingle should accept an ID, and return just that 1 product.
 
 2. Create an SPA which wires up the static HTML given in the repo (You can use (or not) any framework you are comfortable with).
 
-// in progress
+// done
 
 
 3. "Wire up" includes any search, sort, or filters you see on the page.
 
-// in progress
+// done
 
 // sorting highest to lowest or lowest to highest by price done
 
@@ -26,7 +26,7 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // support for multiple filters at once is done
 
-// to do - color filter
+// color filter done
 
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
