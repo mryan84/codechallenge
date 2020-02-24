@@ -1,6 +1,27 @@
 var applySearchTextFilter = false;
 var applyPriceRangeFilter = false;
 var applyColorFilter = false;
+var colorFilterReset = true;
+
+
+
+var colorFilters = [];
+
+function removeColorFilter(color) {
+	const index = colorFilters.indexOf(color);
+	if (index > -1) {
+		colorFilters.splice(index, 1);
+	}
+}
+
+function compareColorsContains(check) {
+	for(var i = 0; i < colorFilters.length; i++) {
+		if(check.toLowerCase().includes(colorFilters[i]))
+			return true;
+	}
+	return false;
+}	
+
 
 function sortNestedPrices(parent, childSelector, keySelector, revisedValueKeySelector, sortDir) {
 	if(sortDir != "def") {
@@ -33,8 +54,32 @@ function sortBySelectedType(dir, isExtraRestriction) {
 	sortNestedPrices($('#sortRow'), "div", "span.block2-price","span.block2-newprice", dir);
 }
 
-function filterByColor () {
+function filterByColors(isExtraRestriction) {
 	// check and see if none are selected - set applyColorFilter to false
+	var items = $('#sortRow').children("div");
+	if(colorFilters.length == 0) {
+		applyColorFilter = false;
+	} else {
+		applyColorFilter = true;
+	}
+	
+	for (var i = 0; i < items.length; i++) {
+		if(compareColorsContains($("a.block2-name", items[i]).text())) {
+			if(!isExtraRestriction)
+				items[i].style.display = "";
+		} else {
+			items[i].style.display = "none";	
+		}	
+	}
+	
+	// treat nothing selected as all selected to return to default view of all items and no colors chosen
+	if(colorFilters.length == 0)
+		colorFilterReset = true;
+	else
+		colorFilterReset = false;
+	
+	if(!isExtraRestriction)
+		applyOtherActiveFilters('colors');
 }	
 
 function filterBySearchField(searchValue, isExtraRestriction) {
@@ -104,11 +149,11 @@ function filterByPriceRangeOption(optionValue, isExtraRestriction) {
 
 // do not apply a filter again if you just applied it - be more restrictive always
 function applyOtherActiveFilters(notThisFilter) {
-	if(notThisFilter != 'search' && applySearchTextFilter) {
-		filterBySearchField($("#searchField").val(),true);
-	}
-	if(notThisFilter != 'priceRange' && applyPriceRangeFilter) {
+	if(notThisFilter != 'search' && (applySearchTextFilter || colorFilterReset))
+		filterBySearchField($("#searchField").val(),true);			
+	if(notThisFilter != 'priceRange' && (applyPriceRangeFilter || colorFilterReset))
 		filterByPriceRangeOption($('#sortPriceRange').children("option:selected").text() ,true);
-	}
+	if(notThisFilter != 'colors' && applyColorFilter)
+		filterByColors(true);
 }
 	

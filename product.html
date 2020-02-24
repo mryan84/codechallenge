@@ -1161,6 +1161,76 @@ $("#searchField").on('keypress',function(e) {
 });
 
 
+$('#color-filter1').change(
+	function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('teal');
+	} else {
+		removeColorFilter('teal');
+	}
+	filterByColors(false);	
+  });
+  
+$('#color-filter2').change(
+  function(){		
+	if ($(this).is(':checked')) {
+		colorFilters.push('blue');
+    } else {
+		removeColorFilter('blue');
+	}
+	filterByColors(false);	
+});
+
+$('#color-filter3').change(
+  function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('orange');
+    } else {
+		removeColorFilter('orange');
+	}  
+	filterByColors(false);	
+});
+
+$('#color-filter4').change(
+  function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('red');
+    } else {
+		removeColorFilter('red');
+	} 
+	filterByColors(false);	
+});
+
+$('#color-filter5').change(
+  function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('brown');
+    } else {
+		removeColorFilter('brown');
+	}
+	filterByColors(false);	
+});
+
+$('#color-filter6').change(
+  function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('black');
+    } else {
+		removeColorFilter('black');	
+	}  
+	filterByColors(false);	
+});
+
+$('#color-filter7').change(
+  function(){
+	if ($(this).is(':checked')) {
+		colorFilters.push('grey');
+	} else {
+		removeColorFilter('grey');
+	} 
+	filterByColors(false);	
+});
+
 </script>
 
 </html>
