@@ -22,6 +22,12 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // sorting by price range done
 
+// sorting by search text is done
+
+// support for multiple filters at once is done
+
+// to do - color filter
+
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
 
