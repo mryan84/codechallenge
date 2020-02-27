@@ -148,7 +148,7 @@ function applyOtherActiveFilters(notThisFilter) {
 		filterByPriceRangeOption($('#sortPriceRange').children("option:selected").text() ,true);
 	if(notThisFilter != 'colors' && applyColorFilter)
 		filterByColors(true);
-	if(notThisFilter == 'colors' && (applyPriceRangeFilter && !applyColorFilter)) // if colors is blank and an option is chosen, override
+	if(notThisFilter == 'colors' && (applyPriceRangeFilter && !applyColorFilter)) // if colors is blank and a price range option is chosen, override to only filtering by price range
 		filterByPriceRangeOption($('#sortPriceRange').children("option:selected").text() ,false);
 		
 }
