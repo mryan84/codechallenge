@@ -5,6 +5,8 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // npm start from root to run server, listens on http://localhost:8080/
 
+// product page can be reached via http://localhost:8080 or http://localhost:8080/product.html
+
 // example usage of GetMany - http://localhost:8080/GetMany
 
 // example usage of GetSingle (pass id, which looks up _id within json) - http://localhost:8080/GetSingle?id=5c58693b2f3b8ac746a18f85
