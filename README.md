@@ -30,6 +30,8 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // color filter done
 
+// price slider? 
+
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
 
