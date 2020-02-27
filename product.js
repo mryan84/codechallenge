@@ -1,9 +1,6 @@
 var applySearchTextFilter = false;
 var applyPriceRangeFilter = false;
 var applyColorFilter = false;
-var colorFilterReset = true;
-
-
 
 var colorFilters = [];
 
@@ -71,18 +68,13 @@ function filterByColors(isExtraRestriction) {
 			items[i].style.display = "none";	
 		}	
 	}
-	
-	// treat nothing selected as all selected to return to default view of all items and no colors chosen
-	if(colorFilters.length == 0)
-		colorFilterReset = true;
-	else
-		colorFilterReset = false;
-	
+		
 	if(!isExtraRestriction)
 		applyOtherActiveFilters('colors');
 }	
 
 function filterBySearchField(searchValue, isExtraRestriction) {
+	console.info('calling search filter with extra of ' + isExtraRestriction);
 	var items = $(".col-sm-12.col-md-6.col-lg-4.p-b-50");
 	if(searchValue.trim() != '')
 		applySearchTextFilter = true;
@@ -103,6 +95,7 @@ function filterBySearchField(searchValue, isExtraRestriction) {
 }
 
 function filterByPriceRangeOption(optionValue, isExtraRestriction) {
+	console.info('calling price filter with extra of ' + isExtraRestriction);
 	var items = $(".col-sm-12.col-md-6.col-lg-4.p-b-50");
 	if(optionValue == "Price") {
 		// Price probably should go back to default, so show all
@@ -149,11 +142,13 @@ function filterByPriceRangeOption(optionValue, isExtraRestriction) {
 
 // do not apply a filter again if you just applied it - be more restrictive always
 function applyOtherActiveFilters(notThisFilter) {
-	if(notThisFilter != 'search' && (applySearchTextFilter || colorFilterReset))
-		filterBySearchField($("#searchField").val(),true);			
-	if(notThisFilter != 'priceRange' && (applyPriceRangeFilter || colorFilterReset))
+	if(notThisFilter != 'search' && (applySearchTextFilter || !applyColorFilter))
+		filterBySearchField($("#searchField").val(),true);
+	if(notThisFilter != 'priceRange' && (applyPriceRangeFilter || !applyColorFilter))
 		filterByPriceRangeOption($('#sortPriceRange').children("option:selected").text() ,true);
 	if(notThisFilter != 'colors' && applyColorFilter)
 		filterByColors(true);
+	if(notThisFilter == 'colors' && (applyPriceRangeFilter && !applyColorFilter)) // if colors is blank and an option is chosen, override
+		filterByPriceRangeOption($('#sortPriceRange').children("option:selected").text() ,false);
+		
 }
-	
