@@ -74,8 +74,7 @@ function filterByColors(isExtraRestriction) {
 }	
 
 function filterBySearchField(searchValue, isExtraRestriction) {
-	console.info('calling search filter with extra of ' + isExtraRestriction);
-	var items = $(".col-sm-12.col-md-6.col-lg-4.p-b-50");
+	var items = $(".col-sm-12.col-md-6.col-lg-4.p-b-50"); // get by class
 	if(searchValue.trim() != '')
 		applySearchTextFilter = true;
 	else
@@ -95,7 +94,6 @@ function filterBySearchField(searchValue, isExtraRestriction) {
 }
 
 function filterByPriceRangeOption(optionValue, isExtraRestriction) {
-	console.info('calling price filter with extra of ' + isExtraRestriction);
 	var items = $(".col-sm-12.col-md-6.col-lg-4.p-b-50");
 	if(optionValue == "Price") {
 		// Price probably should go back to default, so show all
