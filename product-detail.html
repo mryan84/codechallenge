@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="product-detail.js"></script>
 <head>
 	<title>Product Detail</title>
 	<meta charset="UTF-8">
@@ -396,7 +398,7 @@
 
 					<div class="item-slick3 main" data-thumb="images/thumb-item-01.jpg">
 						<div class="wrap-pic-w">
-							<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+							<img id="image" src="" alt="IMG-PRODUCT">
 						</div>
 					</div>
 
@@ -423,17 +425,11 @@
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">
-				<h4 class="product-detail-name m-text16 p-b-13">
-					Boxy T-Shirt with Roll Sleeve Detail
-				</h4>
+				<h4 id="name" class="product-detail-name m-text16 p-b-13"></h4>
 
-				<span class="m-text17">
-					$22
-				</span>
+				<span id="price" class="m-text17"></span>
 
-				<p class="s-text8 p-t-10">
-					Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-				</p>
+				<p id="about" class="s-text8 p-t-10"></p>
 
 				<!--  -->
 				<div class="p-t-33 p-b-60">
@@ -1018,4 +1014,9 @@
 	<div id="dropDownSelect2"></div>
 
 </body>
+
+<script>
+loadSingleItem(getUrlParameter('id'));
+</script>
+
 </html>
