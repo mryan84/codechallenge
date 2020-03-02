@@ -32,13 +32,14 @@ GetSingle should accept an ID, and return just that 1 product.
 
 // price slider? 
 
+// paginate first page of products? looks like we'd need a "3" at the bottom and I could update how many we are displaying.
+
 
 4. The SPA should have 2 pages, a list all products, and an individual product page. Both HTML templates are provided.
 
-// done as 2 pages are provided to edit
+// done as 2 pages are provided to edit.
 
-// product detail page only seems to show 1 item given any choice - i would think it is a requirement to make this dynamic 
-//  based on the chosen item? not done yet, will ask
+// product detail loads GetSingle using the id of the given item. done.
 
 5. Delivery should be a separate github repo on your own account. 
 
